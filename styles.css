@@ -1,3 +1,61 @@
-tr {
-    background-color: red;
+/* azul =#0000FF laranja = #FFA500*/
+
+* {
+    margin:0px;
+    padding:0px;
+    text-decoration: none;
+    font-family: arial;
+    text-transform: capitalize;
+}
+
+span{
+    color: blue;
+    font-weight: bold;
+}
+
+.menu{
+    display: flex;
+    padding: 1.25rem;
+    margin-bottom: 1.50rem;
+    background-color: #ffffff;
+    justify-content: space-around;
+}
+
+#chama-o-dev{
+    color: #5f5f5f;
+}
+.menu img{
+    height:6rem;
+}
+
+.title-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-header img{
+    height: 2.5rem;
+}
+
+.title-header h2{
+    font-size: 1.5rem;
+    color: rgb(61, 61, 61);
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background-color:#ffffff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+main{
+    background-color: #cacaca;
 }
