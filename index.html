@@ -13,78 +13,90 @@
         </div>
     </header>
     <main>
-        <table class="estoque">
-            <tr class="linha_destaque">
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Quantidade</th>
-                <th>Preço Unit.</th>
-                <th>Valor Total</th>
-                <th>Local</th>
-                <th>Status</th>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Barra de Ferro</td>
-                <td>Bruto</td>
-                <td>30</td>
-                <td>R$ 15,00</td>
-                <td>R$ 450,00</td>
-                <td>Armazém B</td>
-                <td>Critico</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-            <tr>
-                <td>Furadeira</td>
-                <td>Ferramenta</td>
-                <td>7</td>
-                <td>R$ 70,00</td>
-                <td>R$ 490,00</td>
-                <td>Armazém C</td>
-                <td>Médio</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-            <tr>
-                <td>Gesso</td>
-                <td>Acabamento</td>
-                <td>30</td>
-                <td>R$ 20,00</td>
-                <td>R$ 600,00</td>
-                <td>Caso dos Gessos</td>
-                <td>Normal</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-            <tr>
-                <td>Enxada</td>
-                <td>Ferramenta</td>
-                <td>15</td>
-                <td>R$ 10,00</td>
-                <td>R$ 150,00</td>
-                <td>Armazém Princial</td>
-                <td>Normal</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-            <tr>
-                <td>Massa Corrida 30kg</td>
-                <td>Tintas House</td>
-                <td>30</td>
-                <td>R$ 100,00</td>
-                <td>R$ 3.000,00</td>
-                <td>Armazém Princial</td>
-                <td>Critico</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-            <tr>
-                <td>Porcelanato 45x45</td>
-                <td>Acabamento</td>
-                <td>120</td>
-                <td>R$ 80,00</td>
-                <td>R$ 9.600,00</td>
-                <td>Loja de Construção</td>
-                <td>Medio</td>
-                <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
-            </tr>
-        </table>
+        <section class="list_estoque">
+            <table class="estoque">
+                <tr class="linha_destaque">
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unit.</th>
+                    <th>Valor Total</th>
+                    <th>Status</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Barra de Ferro</td>
+                    <td>Bruto</td>
+                    <td>30</td>
+                    <td>R$ 15,00</td>
+                    <td>R$ 450,00</td>
+                    <td>Critico</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+                <tr>
+                    <td>Furadeira</td>
+                    <td>Ferramenta</td>
+                    <td>7</td>
+                    <td>R$ 70,00</td>
+                    <td>R$ 490,00</td>
+                    <td>Médio</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+                <tr>
+                    <td>Gesso</td>
+                    <td>Acabamento</td>
+                    <td>30</td>
+                    <td>R$ 20,00</td>
+                    <td>R$ 600,00</td>
+                    <td>Normal</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+                <tr>
+                    <td>Enxada</td>
+                    <td>Ferramenta</td>
+                    <td>15</td>
+                    <td>R$ 10,00</td>
+                    <td>R$ 150,00</td>
+                    <td>Normal</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+                <tr>
+                    <td>Massa Corrida 30kg</td>
+                    <td>Tintas House</td>
+                    <td>30</td>
+                    <td>R$ 100,00</td>
+                    <td>R$ 3.000,00</td>
+                    <td>Critico</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+                <tr>
+                    <td>Porcelanato 45x45</td>
+                    <td>Acabamento</td>
+                    <td>120</td>
+                    <td>R$ 80,00</td>
+                    <td>R$ 9.600,00</td>                    <td>Medio</td>
+                    <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
+                </tr>
+            </table>
+        </section>
+        <section class="list_incluir_item">
+            <h1>+ Adicionar Novo Item</h1>
+            <form action="">
+                <label for="">Nome *</label>
+                <input type="text" placeholder="Ex: Furadeira" name="produto">
+                <label for="">Categoria *</label>
+                <select name="categoria" id="" name="categoria">
+                    <option value="">Bruto</option>
+                    <option value="">Acabamento</option>
+                    <option value="">Ferramenta</option>
+                </select>
+                <label for="">Quantidade *</label>
+                <input type="text" placeholder="0" name="quantidade">
+                <label for="">Preço Unitário (R$)</label>
+                <input type="text" placeholder="0,00" name="preco">
+                <input type="submit" value="+ Adicionar ao Estoque" name="adicionar_item">
+            </form>
+        </section>
     </main>
     <footer class="footer">
         <p>4 produto(s) cadastrados. 157 unidade(s) total</p>
