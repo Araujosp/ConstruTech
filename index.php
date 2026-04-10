@@ -1,3 +1,25 @@
+<?php
+require_once 'init.php';
+
+// print_r($_POST);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+$ids = array_column($_SESSION['produtos'], 'id');
+$novoId = $ids ? max($ids) + 1: 1;
+
+$_SESSION['produtos'][] = [
+         'id' => $novoId,
+        'nome' => $_POST['nome'],
+        'preco' => $_POST['preco'],
+        'categoria' => $_POST['categoria']  
+    ];
+    }
+     print '<pre>';
+     print_r($_SESSION['produtos']);
+     print '</pre>';
+?>
+
+
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" href="styles.css">
