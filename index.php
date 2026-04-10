@@ -96,33 +96,42 @@ $_SESSION['produtos'][] = [
                     <td>Acabamento</td>
                     <td>120</td>
                     <td>R$ 80,00</td>
-                    <td>R$ 9.600,00</td>                    <td>Medio</td>
+                    <td>R$ 9.600,00</td>                    
+                    <td>Medio</td>
                     <td><img src="./img/trash.png" alt="" class="lixo_icon"></td>
                 </tr>
             </table>
         </section>
         <section class="list_incluir_item">
-            <h1>+ Adicionar Novo Item</h1>
             <form action="">
-                <label for="">Nome *</label>
-                <input type="text" placeholder="Ex: Furadeira" name="produto">
-                <label for="">Categoria *</label>
-                <select name="categoria" id="" name="categoria">
-                    <option value="">Bruto</option>
-                    <option value="">Acabamento</option>
-                    <option value="">Ferramenta</option>
-                </select>
-                <label for="">Quantidade *</label>
-                <input type="text" placeholder="0" name="quantidade">
-                <label for="">Preço Unitário (R$)</label>
-                <input type="text" placeholder="0,00" name="preco">
+                <h1>+ Adicionar Novo Item</h1>
+                <div class="list_options">
+                    <label for="" class="left_side">Nome *</label>
+                    <input type="text" placeholder="Ex: Furadeira" name="produto" class="left_side">
+                </div>
+                <div class="list_options">
+                    <label for="" class="left_side">Categoria *</label>
+                    <select name="categoria" id="" name="categoria" class="left_side">
+                        <option value="">Bruto</option>
+                        <option value="">Acabamento</option>
+                        <option value="">Ferramenta</option>
+                    </select>
+                </div>
+                <div class="list_options">
+                    <label for="" class="right_side">Quantidade *</label>
+                    <input type="number" placeholder="0" name="quantidade" class="right_side">
+                </div>
+                <div class="list_options">
+                    <label for="" class="right_side">Preço Unitário (R$)</label>
+                    <input type="number" placeholder="0,00" name="preco" class="right_side">
+                </div>
                 <input type="submit" value="+ Adicionar ao Estoque" name="adicionar_item">
             </form>
         </section>
     </main>
     <footer class="footer">
         <p>4 produto(s) cadastrados. 157 unidade(s) total</p>
-        <p id="chama-o-dev">@Desenvolvido por : Chama o Dev</p>
+        <p id="chama-o-dev">@Desenvolvido por: Chama o Dev</p>
         <p>valor total: R$8.128,00</p>
     </footer>
 </body>
