@@ -1,6 +1,15 @@
 <?php
 require_once 'init.php';
 
+if (isset($_GET['deletar'])) {
+    $idDeletar = $_GET['deletar'];
+    foreach ($_SESSION['produtos'] as $key => $produto) {
+        if ($produto['id'] == $idDeletar) {
+            unset($_SESSION['produtos'][$key]);
+        }
+    }
+}
+
 // print_r($_POST);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -75,7 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <td><?php echo $valor_total ?></td>
                         <td>Critico</td>
-                        <td><img src="./img/trash.png" alt="" class="lixo_icon"></td> 
+                        <td>
+                        <a href="?deletar=<?php echo $produto['id']; ?>">
+                            <img src="./img/trash.png" class="lixo_icon">
+                        </a>
+                        </td>
                     </tr>
                     <?php } ?>
             </table>
