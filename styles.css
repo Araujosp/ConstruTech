@@ -16,13 +16,21 @@ body {
 .menu{
     display: flex;
     padding: 1.25rem;
-    background-color: #cacaca;
+    background-color: #9c9c9c;
     justify-content: space-around;
+    box-shadow: 10px rgb(163, 163, 163);
 }
 
 main{
-    background-color: #5f5f5f;
+    background-color: #d3d3d3;
 }
+
+#title_main{
+    text-align: center;
+    margin: 10px;
+    color: rgb(189, 90, 19);
+}
+
 
 .list_estoque {
     display: flex;
@@ -62,13 +70,59 @@ form {
     gap: 15px;
 }
 
-.list_options {
+.form-grid {
+    margin-top: 40px;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
+
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    width: 900px;
 }
 
-.right_side {
-    grid-area: right;
+/* cada campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* inputs */
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* botão ocupa linha inteira */
+.full {
+    grid-column: span 3;
+}
+
+/* botão estilo */
+.btn {
+    background-color: #2d9cdb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 250px;
+}
+
+.btn:hover {
+    background-color: #238ac7;
+}
+
+
 
 span{
     color: blue;
@@ -86,7 +140,7 @@ th, td {
 
 
 #chama-o-dev{
-    color: #5f5f5f;
+    color: #dfdfdf;
 }
 
 .menu img{

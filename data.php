@@ -14,70 +14,80 @@ $produtos_base= [
         'nome'=>'cimento',
         'preco'=>38.90,
         'qtd_estoque' =>173,
-        'categoria'=>'bruto'
+        'categoria'=>'bruto',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     [
         'id'=>2,
         'nome'=>'saco de areia',
         'preco'=>10.00,
         'qtd_estoque' =>520,
-        'categoria'=> 'bruto'
+        'categoria'=> 'bruto',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     [
         'id'=>3,
         'nome'=>'martelo',
         'preco'=>50.00,
         'qtd_estoque' =>65,
-        'categoria'=> 'ferramentas'
+        'categoria'=> 'ferramentas',
+        'fornecedor'=>'Distribuidora ABC'
     ],
     [
         'id'=>4,
         'nome'=>'furadeira',
         'preco'=>279.99,
         'qtd_estoque' =>24,
-        'categoria'=> 'ferramentas'
+        'categoria'=> 'ferramentas',
+        'fornecedor'=>'Distribuidora ABC'
     ],
     [
         'id'=>5,
         'nome'=>'fita métrica',
         'preco'=>27.99,
         'qtd_estoque' =>43,
-        'categoria'=> 'ferramentas'
+        'categoria'=> 'ferramentas',
+        'fornecedor'=>'Distribuidora ABC'
     ],
     [
         'id'=>6,
         'nome'=>'concreto pronto',
         'preco'=>15.25,
         'qtd_estoque' =>43,
-        'categoria'=> 'bruto'
+        'categoria'=> 'bruto',
+        'fornecedor'=>'Distribuidora ABC'
     ],
     [
         'id'=>7,
         'nome'=>'rejunte',
         'preco'=>23.79,
         'qtd_estoque' =>59,
-        'categoria'=> 'acabamento'
+        'categoria'=> 'acabamento',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     [
         'id'=>8,
         'nome'=>'massa corrida',
         'preco'=>82.99,
         'qtd_estoque' =>55,
-        'categoria'=> 'acabamento'
+        'categoria'=> 'acabamento',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     [
         'id'=>9,
         'nome'=>'bloco de concreto',
         'preco'=>4,
         'qtd_estoque' =>1279,
-        'categoria'=> 'bruto'
+        'categoria'=> 'bruto',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     [
         'id'=>10,
         'nome'=>'martelete',
         'preco'=>579.79,
         'qtd_estoque' =>33,
-        'categoria'=> 'ferramentas'
+        'categoria'=> 'ferramentas',
+        'fornecedor'=>'Distribuidora ECO'
     ],
     
 ];
