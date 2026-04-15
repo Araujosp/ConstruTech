@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-
 <html lang="pt-br">
 
 <head>
@@ -46,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="title-header">
             <img src="imagens/estoque-pronto.png" alt="">
             <h2>controle de estoque</h2>
+            <a href="cadastro.php">cadastrar produto</a>
         </div>
     </header>
 
@@ -93,54 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php } ?>
             </table>
         </section>
-        <section class="list_incluir_item">
-    <h1 id="title_main">+ Adicionar Novo Item</h1>
-
-    <form action="index.php" method="POST" class="form-grid">
-
-        <div class="form-group">
-            <label>Nome *</label>
-            <input type="text" placeholder="Ex: Furadeira" name="nome">
-        </div>
-
-        <div class="form-group">
-            <label>Categoria *</label>
-            <select name="categoria">
-                <option value="">Selecione</option>
-                <option value="bruto">Bruto</option>
-                <option value="acabamento">Acabamento</option>
-                <option value="ferramenta">Ferramenta</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Quantidade *</label>
-            <input type="text" placeholder="0" name="qtd_estoque">
-        </div>
-
-        <div class="form-group">
-            <label>Preço Unitário (R$) *</label>
-            <input type="text" placeholder="0,00" name="preco">
-        </div>
-
-        <div class="form-group">
-            <label>Fornecedor</label>
-            <input type="text" placeholder="Ex: Distribuidora ABC" name = "fornecedor">
-        </div>
-
-        <div class="form-group">
-            <label>Local</label>
-            <select>
-                <option>Selecione</option>
-            </select>
-        </div>
-
-        <div class="form-group full">
-            <input type="submit" value="+ Adicionar ao Estoque" name="adicionar_item" class="btn">
-        </div>
-
-    </form>
-</section>
     </main>
     <footer class="footer">
         <p><?php echo $qtd_produtos?> produto(s) cadastrados.
