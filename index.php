@@ -44,13 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="imagens/logo-sem-fundo.png">
         <div class="title-header">
             <img src="imagens/estoque-pronto.png" alt="">
-            <h2>controle de estoque</h2>
-            <a href="cadastro.php">cadastrar produto</a>
+            <h2>Controle de Estoque</h2>
         </div>
+        <a href="cadastro.php" class="title-header btn_cadastrar_produto">cadastrar produto</a>
     </header>
-
     <main>
-        <h1 id="title_main">Gerenciamento De Estoque</h1>
         <section class="list_estoque">
             <table class="estoque">
                 <tr class="linha_destaque">
@@ -98,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p><?php echo $qtd_produtos?> produto(s) cadastrados.
             <?php echo $total_unidades?> unidade(s) total</p>
         <p id="chama-o-dev">@Desenvolvido por: Chama o Dev</p>
-        <p>valor total: R$<?php echo $total_geral ?></p>
+        <p class="valor_total">Valor Total: <span>R$ <?php echo $total_geral ?></span></p>
     </footer>
 </body>
 

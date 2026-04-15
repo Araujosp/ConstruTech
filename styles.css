@@ -6,13 +6,12 @@
     text-decoration: none;
     font-family: arial;
     text-transform: capitalize;
-    border: 1px solid red;
-
 }
 
 html{
     scroll-behavior: smooth;
 }
+
 
 body {
     width: 100%;
@@ -25,17 +24,37 @@ body {
     padding: 1.25rem;
     background-color: #9c9c9c;
     justify-content: space-around;
+    align-items: center;
     box-shadow: 10px rgb(163, 163, 163);
+}
+
+.btn_cadastrar_produto {
+    padding: 16px;
+    background-color: #000000;
+    color: rgb(189, 90, 19);
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn_cadastrar_produto:hover {
+    background-color: rgb(189, 90, 19);
+    color: #000000;
+}
+
+h2 {
+    font-weight: 800;
 }
 
 main{
     background-color: #d3d3d3;
+    height: 80vh;
 }
 
 #title_main{
     text-align: center;
-    margin: 10px;
+    padding: 10px;
     color: rgb(189, 90, 19);
+    text-align: left;
 }
 
 
@@ -46,7 +65,7 @@ main{
 }
 
 table {
-    margin-top: 150px;
+    margin: 80px;
     padding: 25px;
     background-color: #ffff;
     border: 1px solid rgb(0, 0, 0);
@@ -67,27 +86,23 @@ table {
 form {
     margin-top: 75px;
     margin-bottom: 75px;
-    display: grid;
-    grid-template-columns: repeat(2, 350px);
-    grid-template-areas: 
-    'left left'
-    'left left'
-    'right right'
-    'right right';
+    width: 900px;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
     gap: 15px;
+}
+
+label {
+    font-weight: 600;
 }
 
 .form-grid {
     margin-top: 40px;
-    background: #f5f5f5;
-    padding: 25px;
-    border-radius: 10px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
-    width: 900px;
 }
 
 /* cada campo */
@@ -128,8 +143,6 @@ form {
 .btn:hover {
     background-color: #238ac7;
 }
-
-
 
 span{
     color: blue;
@@ -177,4 +190,14 @@ th, td {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+span {
+    color: rgb(39, 133, 255);
+    font-size: 20px;
+}
+
+.valor_total {
+    font-weight: 600;
+    font-size: 18px;
 }
