@@ -70,6 +70,7 @@ table {
     background-color: #ffff;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 8px;    
+    text-align: center;
 }
 
 .list_incluir_item {
@@ -200,4 +201,8 @@ span {
 .valor_total {
     font-weight: 600;
     font-size: 18px;
+}
+
+.crementos{
+    font-size: 8px;
 }

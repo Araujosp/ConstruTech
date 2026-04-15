@@ -15,7 +15,8 @@ $produtos_base= [
         'preco'=>38.90,
         'qtd_estoque' =>173,
         'categoria'=>'bruto',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>2,
@@ -23,7 +24,8 @@ $produtos_base= [
         'preco'=>10.00,
         'qtd_estoque' =>520,
         'categoria'=> 'bruto',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>3,
@@ -31,7 +33,8 @@ $produtos_base= [
         'preco'=>50.00,
         'qtd_estoque' =>65,
         'categoria'=> 'ferramentas',
-        'fornecedor'=>'Distribuidora ABC'
+        'fornecedor'=>'Distribuidora ABC',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>4,
@@ -39,7 +42,8 @@ $produtos_base= [
         'preco'=>279.99,
         'qtd_estoque' =>24,
         'categoria'=> 'ferramentas',
-        'fornecedor'=>'Distribuidora ABC'
+        'fornecedor'=>'Distribuidora ABC',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>5,
@@ -47,7 +51,8 @@ $produtos_base= [
         'preco'=>27.99,
         'qtd_estoque' =>43,
         'categoria'=> 'ferramentas',
-        'fornecedor'=>'Distribuidora ABC'
+        'fornecedor'=>'Distribuidora ABC',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>6,
@@ -55,7 +60,8 @@ $produtos_base= [
         'preco'=>15.25,
         'qtd_estoque' =>43,
         'categoria'=> 'bruto',
-        'fornecedor'=>'Distribuidora ABC'
+        'fornecedor'=>'Distribuidora ABC',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>7,
@@ -63,7 +69,8 @@ $produtos_base= [
         'preco'=>23.79,
         'qtd_estoque' =>59,
         'categoria'=> 'acabamento',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>8,
@@ -71,7 +78,8 @@ $produtos_base= [
         'preco'=>82.99,
         'qtd_estoque' =>55,
         'categoria'=> 'acabamento',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>9,
@@ -79,7 +87,8 @@ $produtos_base= [
         'preco'=>4,
         'qtd_estoque' =>1279,
         'categoria'=> 'bruto',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     [
         'id'=>10,
@@ -87,7 +96,8 @@ $produtos_base= [
         'preco'=>579.79,
         'qtd_estoque' =>33,
         'categoria'=> 'ferramentas',
-        'fornecedor'=>'Distribuidora ECO'
+        'fornecedor'=>'Distribuidora ECO',
+        'local'=>'Estoque Principal'
     ],
     
 ];
