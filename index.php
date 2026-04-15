@@ -10,6 +10,31 @@ if (isset($_GET['deletar'])) {
     }
 }
 
+if(isset($_GET['incrementar'])){
+    $incrementar= $_GET['incrementar'];
+    foreach($_SESSION['produtos'] as $key => $produto){
+        if ($produto ['id'] == $incrementar){
+        $_SESSION['produtos'][$key]['qtd_estoque'] +=1;
+        }
+    }
+}
+
+if (isset($_GET['decrementar'])) {
+    $decrementar = $_GET['decrementar'];
+
+    foreach ($_SESSION['produtos'] as $key => $produto) {
+        if ($produto['id'] == $decrementar) {
+
+            if ($_SESSION['produtos'][$key]['qtd_estoque'] > 1) {
+                $_SESSION['produtos'][$key]['qtd_estoque'] -= 1;
+            } else {
+                unset($_SESSION['produtos'][$key]);
+            }
+
+        }
+    }
+}
+
 // print_r($_POST);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -56,7 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tr class="linha_destaque">
                     <th>Nome</th>
                     <th>Categoria</th>
+                    <th></th>
                     <th>Quantidade</th>
+                    <th></th>
                     <th>Preço Unit.</th>
                     <th>Fornecedor</th>
                     <th>Valor Total</th>
@@ -72,7 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <tr>
                         <td><?php echo $produto['nome'] ?></td>
                         <td><?php echo $produto['categoria'] ?></td>
+
+                        <td class='crementos' >
+                            <a href="?decrementar=<?php echo $produto ['id']; ?>">➖</a>
+                            </td>         
                         <td><?php echo $produto['qtd_estoque'] ?></td>
+
+                        <td class='crementos' >
+                            <a href="?incrementar=<?php echo $produto ['id']; ?>">➕</a>
+                            </td>
+
                         <td><?php echo $produto['preco'] ?></td>
                         <td><?php echo $produto['fornecedor'] ?></td>
 
