@@ -1,6 +1,6 @@
 <?php
 
-$nomeLoja= "ConstruTech";
+$nomedaLoja= "ConstruTech";
 
 $categorias= [
     'bruto' =>'bruto',
@@ -98,6 +98,5 @@ $produtos_base= [
         'categoria'=> 'ferramentas',
         'fornecedor'=>'Distribuidora ECO',
         'local'=>'Estoque Principal'
-    ],
-    
+    ]
 ];

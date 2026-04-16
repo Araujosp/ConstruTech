@@ -39,12 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div class="form-group">
                     <label>Nome *</label>
-                    <input type="text" placeholder="Ex: Furadeira" name="nome">
+                    <input type="text" placeholder="Ex: Furadeira" name="nome" required>
                 </div>
     
                 <div class="form-group">
                     <label>Categoria *</label>
-                    <select name="categoria">
+                    <select name="categoria" required>
                         <option value="">Selecione</option>
                         <option value="bruto">Bruto</option>
                         <option value="acabamento">Acabamento</option>
@@ -54,22 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
                 <div class="form-group">
                     <label>Quantidade *</label>
-                    <input type="text" placeholder="0" name="qtd_estoque">
+                    <input type="text" placeholder="0" name="qtd_estoque" required>
                 </div>
     
                 <div class="form-group">
                     <label>Preço Unitário (R$) *</label>
-                    <input type="text" placeholder="0,00" name="preco">
+                    <input type="text" placeholder="0,00" name="preco" required>
                 </div>
     
                 <div class="form-group">
                     <label>Fornecedor</label>
-                    <input type="text" placeholder="Ex: Distribuidora ABC" name = "fornecedor">
+                    <input type="text" placeholder="Ex: Distribuidora ABC" name = "fornecedor" required>
                 </div>
     
                 <div class="form-group">
                     <label>Local</label>
-                    <select>
+                    <select name="local" required>
                         <option>Selecione</option>
                         <option>Estoque Principal</option>
                         <option>Estoque 2</option>

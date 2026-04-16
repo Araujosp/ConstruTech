@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'preco' => $_POST['preco'],
         'categoria' => $_POST['categoria'],
         'qtd_estoque' => $_POST['qtd_estoque'],
-        'fornecedor' => $_POST['fornecedor']
+        'fornecedor' => $_POST['fornecedor'],
+        'local' => $_POST['local']
     ];
 }
 //print '<pre>';
@@ -110,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <td><?php echo $produto['preco'] ?></td>
                         <td><?php echo $produto['fornecedor'] ?></td>
-                        <td><?php echo $produto['local'] ?></td>
+                        <td><?php echo $produto['local'] ?? 'sem local'; ?></td>
 
                         <?php
                         $valor_total = (float)$produto['preco'] * (int)$produto['qtd_estoque'];
