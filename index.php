@@ -89,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <th>Valor Total</th>
                     <th>Status</th>
                     <td></td>
+                    <td></td>
                 </tr> 
                 <?php 
                 $total_geral = 0;
@@ -109,8 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href="?incrementar=<?php echo $produto ['id']; ?>">➕</a>
                             </td>
 
-                        <td><?php echo $produto['preco'] ?></td>
-                        <td><?php echo $produto['fornecedor'] ?></td>
+                        <td><?php echo $produto['preco'] ??'sem preço';?></td>
+                        <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?></td>
                         <td><?php echo $produto['local'] ?? 'sem local'; ?></td>
 
                         <?php
@@ -125,6 +126,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <a href="?deletar=<?php echo $produto['id']; ?>">
                             <img src="./img/trash.png" class="lixo_icon">
                         </a>
+                        </td>
+                        <td>
+                            <a href="editarProduto.php ?editar=<?php  echo $produto['id'];?>"><img src="imagens/editar.png" alt="imagem para editar o produto">
+                            </a>
                         </td>
                     </tr>
                     <?php } ?>
