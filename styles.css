@@ -8,15 +8,23 @@
     text-transform: capitalize;
 }
 
+:root {
+    --font-size: 14px;
+}
+
 html{
     scroll-behavior: smooth;
 }
 
+p {
+    font-size: var(--font-size);
+}
 
 body {
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
+    font-size: var(--font-size);
 }
 
 .menu{
@@ -47,7 +55,6 @@ h2 {
 
 main{
     padding: 20px;
-    background-color: #d3d3d3;
 }
 
 #title_main{
@@ -150,9 +157,11 @@ span{
     font-weight: bold;
 }
 
-th, td {
+table, th, td {
+    font-size: var(--font-size);
     padding: 15px;
-    border-bottom: 1px solid lightgray;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
 }
 
 .lixo_icon {

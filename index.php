@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <td class='crementos' >
                         <a href="?incrementar=<?php echo $produto ['id']; ?>">➕</a>
-                        </td>
+                    </td>
 
                     <td><?php echo $produto['preco'] ??'sem preço';?></td>
                     <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?></td>
