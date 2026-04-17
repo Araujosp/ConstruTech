@@ -1,6 +1,9 @@
 <?php
 require_once 'init.php';
 
+//var_dump($_GET);
+//exit;
+
 if (isset($_GET['editar'])){
     $produtoEditado =($_GET['editar']);
      foreach ($_SESSION['produtos'] as $key => $produto){
@@ -51,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="index.php" class="title-header btn_cadastrar_produto">Voltar ao Estoque</a>
     </header>
     <section class="list_incluir_item">
-        <form action="index.php" method="POST" >
+        <form method="POST">
 
             <input type="hidden" name="id" value="<?php echo $produtoSelecionado['id']; ?>">
 
