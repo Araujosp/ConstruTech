@@ -46,8 +46,8 @@ h2 {
 }
 
 main{
+    padding: 20px;
     background-color: #d3d3d3;
-    height: 80vh;
 }
 
 #title_main{
@@ -183,16 +183,6 @@ th, td {
     color: rgb(61, 61, 61);
 }
 
-.footer{
-    width: 100%;
-    padding: 1.5rem;
-    background-color: #cacaca;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-}
 
 span {
     color: rgb(39, 133, 255);
@@ -206,4 +196,34 @@ span {
 
 .crementos{
     font-size: 8px;
+}
+
+.resultado_estoque {
+    display: flex;
+}
+
+.status_bom {
+    padding: 5px;
+    background-color: green;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.status_critico {
+    padding: 5px;
+    background-color: red;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+.status_razoavel {
+    padding: 5px;
+    background-color: yellow;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
 }
