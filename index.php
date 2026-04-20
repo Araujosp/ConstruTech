@@ -76,84 +76,86 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
     <main>
         <section class="list_estoque">
-            <table class="estoque">
-                <tr class="linha_destaque">
-                    <th>Nome</th>
-                    <th>Categoria</th>
-                    <th></th>
-                    <th>Quantidade</th>
-                    <th></th>
-                    <th>Preço Unit.</th>
-                    <th>Fornecedor</th>
-                    <th>Local</th>
-                    <th>Valor Total</th>
-                    <th>Status</th>
-                    <td></td>
-                    <td></td>
-                </tr> 
-                <?php 
-                $total_geral = 0;
-                $total_unidades = 0;
-                $qtd_produtos = count($_SESSION['produtos']); 
-                ?>
-                <?php foreach ($_SESSION['produtos'] as $produto) { ?> 
-                <tr>
-                    <td><?php echo $produto['nome'] ?></td>
-                    <td><?php echo $produto['categoria'] ?></td>
-
-                    <td class='crementos' >
-                        <a href="?decrementar=<?php echo $produto ['id']; ?>">➖</a>
-                        </td>         
-                    <td><?php echo $produto['qtd_estoque'] ?></td>
-
-                    <td class='crementos' >
-                        <a href="?incrementar=<?php echo $produto ['id']; ?>">➕</a>
-                    </td>
-
-                    <td><?php echo $produto['preco'] ??'sem preço';?></td>
-                    <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?></td>
-                    <td><?php echo $produto['local'] ?? 'sem local'; ?></td>
-
-                    <?php
-                    $valor_total = (float)$produto['preco'] * (int)$produto['qtd_estoque'];
-                    $total_geral += $valor_total;
-                    $total_unidades += (int)$produto['qtd_estoque'] ;
+            <div class="estoque">
+                <table>
+                    <tr class="linha_destaque">
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th></th>
+                        <th>Quantidade</th>
+                        <th></th>
+                        <th>Preço Unit.</th>
+                        <th>Fornecedor</th>
+                        <th>Local</th>
+                        <th>Valor Total</th>
+                        <th>Status</th>
+                        <td></td>
+                        <td></td>
+                    </tr> 
+                    <?php 
+                    $total_geral = 0;
+                    $total_unidades = 0;
+                    $qtd_produtos = count($_SESSION['produtos']); 
                     ?>
+                    <?php foreach ($_SESSION['produtos'] as $produto) { ?> 
+                    <tr>
+                        <td><?php echo $produto['nome'] ?></td>
+                        <td><?php echo $produto['categoria'] ?></td>
 
-                    <td><?php echo $valor_total ?></td>
-                    <td>
-                    <?php
-                        $estoque = $produto['qtd_estoque'] ?? 0;
-                        if($estoque >= 50) {
-                            echo '<p class="status_bom">Bom</p>';
-                        }elseif ($estoque < 50 && $estoque >= 20 ) {
-                            echo '<p class="status_razoavel">Razoavel</p>';
-                        }elseif ($estoque < 20) {
-                            echo '<p class="status_critico">Critico</p>';
-                        }
-                    ?>
-                    </td>
-                    <td>
-                    <a href="?deletar=<?php echo $produto['id']; ?>">
-                        <img src="./img/trash.png" class="lixo_icon">
-                    </a>
-                    </td>
-                    <td>
-                        <a href="editarProduto.php ?editar=<?php  echo $produto['id'];?>"><img src="imagens/editar.png" alt="imagem para editar o produto">
+                        <td class='crementos' >
+                            <a href="?decrementar=<?php echo $produto ['id']; ?>">➖</a>
+                            </td>         
+                        <td><?php echo $produto['qtd_estoque'] ?></td>
+
+                        <td class='crementos' >
+                            <a href="?incrementar=<?php echo $produto ['id']; ?>">➕</a>
+                        </td>
+
+                        <td>R$ <?php echo $produto['preco'] ??'sem preço';?></td>
+                        <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?></td>
+                        <td><?php echo $produto['local'] ?? 'sem local'; ?></td>
+
+                        <?php
+                        $valor_total = (float)$produto['preco'] * (int)$produto['qtd_estoque'];
+                        $total_geral += $valor_total;
+                        $total_unidades += (int)$produto['qtd_estoque'] ;
+                        ?>
+
+                        <td>R$ <?php echo $valor_total ?></td>
+                        <td>
+                        <?php
+                            $estoque = $produto['qtd_estoque'] ?? 0;
+                            if($estoque >= 50) {
+                                echo '<p class="status_bom">Bom</p>';
+                            }elseif ($estoque < 50 && $estoque >= 20 ) {
+                                echo '<p class="status_razoavel">Razoavel</p>';
+                            }elseif ($estoque < 20) {
+                                echo '<p class="status_critico">Critico</p>';
+                            }
+                        ?>
+                        </td>
+                        <td>
+                        <a href="?deletar=<?php echo $produto['id']; ?>">
+                            <img src="./img/trash.png" class="lixo_icon">
                         </a>
-                    </td>
-                </tr>
-                <?php } ?>
-                <tr>
-                    <td colspan="6">
-                        <p><?php echo $qtd_produtos?> produto(s) cadastrados.
-                        <?php echo $total_unidades?> unidade(s) total</p>
-                    </td>
-                    <td colspan="6">
-                        <p class="valor_total">Valor Total: <span>R$ <?php echo $total_geral ?></span></p>
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                        <td>
+                            <a href="editarProduto.php?editar=<?php  echo $produto['id'];?>"><img src="imagens/editar.png" alt="imagem para editar o produto">
+                            </a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <tr>
+                        <td colspan="6">
+                            <p><?php echo $qtd_produtos?> produto(s) cadastrados.
+                            <?php echo $total_unidades?> unidade(s) total</p>
+                        </td>
+                        <td colspan="6">
+                            <p class="valor_total">Valor Total: <span>R$ <?php echo $total_geral ?></span></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </section>
     </main>
 </body>
