@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 /* azul =#0000FF laranja = #FFA500*/
 
 * {
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
     text-decoration: none;
-    font-family: arial;
-    text-transform: capitalize;
+    font-family: "Oswald", sans-serif;
 }
 
 :root {
     --font-size: 14px;
+    --font-principal: "Oswald", sans-serif;
 }
 
 html{
@@ -25,8 +27,180 @@ body {
     height: 100vh;
     overflow-x: hidden;
     font-size: var(--font-size);
+    font-family: var(--font-principal);
 }
 
+h1,p,h2 {
+    font-family: var(--font-principal);
+}
+
+
+/*-------------------------- Login --------------------------*/
+.logo_login {
+    height: 150px;
+}
+
+.main_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo_login {
+    margin-bottom: 25px;
+    font-size: 35px;
+
+}
+
+.form_login {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input_login {
+    border: none;
+}
+
+.campo_input {
+    margin-top: 8px;
+    padding: 10px 8px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+
+.senha_font {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget {
+    color: #000000;
+}
+
+.check_forget {
+    display: flex;
+    gap: 5px;
+}
+
+.forget:hover {
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+
+.text {
+    font-weight: 300;
+    text-align: center;
+}
+
+.img_form {
+    height: 16px;
+}
+
+.btn_login {
+    background: #07003d;
+    display: flex;
+    text-decoration: none;
+}
+
+.img_img {
+    height: 5px;
+}
+
+.btn_login {
+    padding: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.divider {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.text_divider {
+    color: #000000;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #000000;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.btn_solicitacao {
+    background: #ffffff;
+    border: 1px solid #aaaaaa;
+    color: #000000;
+}
+
+.btn_solicitacao:hover {
+    background: #e5e5e5;
+    border: 1px solid #ff7300;
+}
+
+.new_login {
+    color: #000000;
+    font-weight: 600;
+}
+
+.new_login:hover {
+    color: #ff7300;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff7300;
+}
+
+/*------------------------------------------------------------*/
+
+/*-------------------------- Cadastro --------------------------*/
+.form_cad {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(4,35px);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.campo_cad {
+    width: auto;
+    padding: 5px 15px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+
+
+/*------------------------------------------------------------*/
 .menu{
     display: flex;
     padding: 1.25rem;
@@ -103,7 +277,7 @@ th, td {
     border-radius: 8px;
 }
 
-form {
+.formulario {
     margin-top: 75px;
     margin-bottom: 75px;
     width: 900px;
@@ -168,7 +342,6 @@ span{
     color: blue;
     font-weight: bold;
 }
-
 
 .lixo_icon {
     height: 20px;

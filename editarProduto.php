@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="index.php" class="title-header btn_cadastrar_produto">Voltar ao Estoque</a>
     </header>
     <section class="list_incluir_item">
-        <form method="POST">
+        <form method="POST" class="formulario">
 
             <input type="hidden" name="id" value="<?php echo $produtoSelecionado['id']; ?>">
 

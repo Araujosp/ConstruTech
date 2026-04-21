@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="index.php" class="title-header btn_cadastrar_produto">Voltar ao Estoque</a>
     </header>
     <section class="list_incluir_item">
-        <form action="index.php" method="POST" >
+        <form action="index.php" method="POST" class="formulario">
             <h1 id="title_main">+ Adicionar Novo Item</h1>
             <div class="form-grid">
                 

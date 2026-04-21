@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <header class="menu">
-        <img src="imagens/logo-sem-fundo.png">
+        <img src="imagens/logo-sem-fundo.png" alt="">
         <div class="title-header">
             <img src="imagens/estoque-pronto.png" alt="">
             <h2>Controle de Estoque</h2>
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </td>
                         <td>
                         <a href="?deletar=<?php echo $produto['id']; ?>">
-                            <img src="./img/trash.png" class="lixo_icon">
+                            <img src="./img/trash.png" class="lixo_icon" alt="">
                         </a>
                         </td>
                         <td>
