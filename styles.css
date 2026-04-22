@@ -6,12 +6,13 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-    font-family: "Oswald", sans-serif;
+    font-family: Inter, sans-serif;    
 }
 
 :root {
     --font-size: 14px;
     --font-principal: "Oswald", sans-serif;
+    --font-secundaria: Arial;
 }
 
 html{
@@ -27,7 +28,11 @@ body {
     height: 100vh;
     overflow-x: hidden;
     font-size: var(--font-size);
-    font-family: var(--font-principal);
+}
+
+input[type="text"] {
+    outline: none;
+    border: none;
 }
 
 h1,p,h2 {
@@ -36,6 +41,10 @@ h1,p,h2 {
 
 
 /*-------------------------- Login --------------------------*/
+.body_login {
+    font-family: "Oswald", sans-serif;
+}
+
 .logo_login {
     height: 150px;
 }
@@ -177,6 +186,29 @@ h1,p,h2 {
 /*------------------------------------------------------------*/
 
 /*-------------------------- Cadastro --------------------------*/
+
+
+.main_cad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.titulo_cad {
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card_cad {
+    padding: 30px;
+    width: 350px;
+    background-color: #ff7300;
+    border-radius: 8px;
+}
+
 .form_cad {
     display: grid;
     grid-template-columns: 250px;
@@ -189,13 +221,17 @@ h1,p,h2 {
 .campo_cad {
     width: auto;
     padding: 5px 15px;
+    background-color: #ffffff;
     border: 1px solid #000000;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 5px;
-
 }
+
+.campo_cad[contenteditable="true"]:focus {
+    border: 2px solid #000000;
+} 
 
 
 
@@ -204,10 +240,10 @@ h1,p,h2 {
 .menu{
     display: flex;
     padding: 1.25rem;
-    background-color: #e5e5e5;
     justify-content: space-around;
     align-items: center;
     box-shadow: 10px rgb(163, 163, 163);
+    border-bottom: 1px solid #aaaaaa;
 }
 
 .btn_cadastrar_produto {
@@ -231,13 +267,16 @@ main{
     padding: 20px;
 }
 
+.main_index{
+    background-color: #e5e5e5;
+}
+
 #title_main{
     text-align: center;
     padding: 10px;
     color: rgb(189, 90, 19);
     text-align: left;
 }
-
 
 .list_estoque {
     display: flex;
@@ -247,23 +286,33 @@ main{
 
 .estoque {
     margin: 50px;
-    padding: 15px 0px 15px 0px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #aaaaaa;
     border-radius: 12px;    
-
 }
 
 table {
+    padding: 5px;
     background-color: #ffff;
     text-align: center;
     border-collapse: collapse;
+    border-radius: 10px;
 }
 
 th, td {
     font-size: var(--font-size);
     padding: 15px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #aaaaaa;
     border-radius: 12px;
+}
+
+.linha_destaque {
+    color: #636363;
+}
+
+.negrito {
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
 }
 
 .list_incluir_item {
@@ -371,12 +420,6 @@ span{
     color: rgb(61, 61, 61);
 }
 
-
-span {
-    color: rgb(39, 133, 255);
-    font-size: 20px;
-}
-
 .valor_total {
     font-weight: 600;
     font-size: 18px;
@@ -407,6 +450,7 @@ span {
     font-size: 15px;
     font-weight: 600;
 }
+
 .status_razoavel {
     padding: 5px;
     background-color: yellow;

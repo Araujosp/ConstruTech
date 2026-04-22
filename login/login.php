@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles.css">
     <title>Login</title>
 </head>
-<body>
+<body class="body_login">
     <main class="main_login">
         <img src="../imagens/logo-sem-fundo.png" alt="logo_png" class="logo_login">
         <h1 class="titulo_login">Acessar Conta</h1>

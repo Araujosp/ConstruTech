@@ -63,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imagens/logo-sem-fundo.png">
     <title>ConstruTech</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
 <body>
@@ -74,10 +76,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <a href="cadastro.php" class="title-header btn_cadastrar_produto">cadastrar produto</a>
     </header>
-    <main>
+    <main class="main_index">
         <section class="list_estoque">
             <div class="estoque">
+                <div class="filtro">
+                    <img src="" alt="">
+                    <p>Filtro:</p>
+                    <select name="" id="" class="filtragem">
+                        <option value="">Todas Categorias</option>
+                        <option value="">Bruto</option>
+                        <option value="">Acabamento</option>
+                        <option value="">Ferramenta</option>
+                    </select>
+                    <select name="" id="" class="filtragem">
+                        <option value="">Todos Locais</option>
+                        <option value="">Estoque Principal</option>
+                        <option value="">Estoque 2</option>
+                        <option value="">Armazém A</option>
+                    </select>
+                    <select name="" id="" class="filtragem">
+                        <option value="">Todos Status</option>
+                        <option value="">Bom</option>
+                        <option value="">Razoavel</option>
+                        <option value="">Critico</option>
+                    </select>
+                    <select name="" id="" class="filtragem">
+                        <option value="">Todas Fornecedores</option>
+                        <option value="">Distribuidora ABC</option>
+                        <option value="">Distribuidora ECO</option>
+                    </select>
+                </div>
                 <table>
+                    <tr>
+                        <th colsan="12">Filtro:</th>
+                    </tr>
                     <tr class="linha_destaque">
                         <th>Nome</th>
                         <th>Categoria</th>
@@ -99,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                     <?php foreach ($_SESSION['produtos'] as $produto) { ?> 
                     <tr>
-                        <td><?php echo $produto['nome'] ?></td>
+                        <td><span class="negrito"><?php echo $produto['nome'] ?></span></td>
                         <td><?php echo $produto['categoria'] ?></td>
 
                         <td class='crementos' >
@@ -121,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $total_unidades += (int)$produto['qtd_estoque'] ;
                         ?>
 
-                        <td>R$ <?php echo $valor_total ?></td>
+                        <td><span class="negrito">R$ <?php echo $valor_total ?></span></td>
                         <td>
                         <?php
                             $estoque = $produto['qtd_estoque'] ?? 0;
@@ -135,9 +167,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         ?>
                         </td>
                         <td>
-                        <a href="?deletar=<?php echo $produto['id']; ?>">
-                            <img src="./img/trash.png" class="lixo_icon" alt="">
-                        </a>
+                            <a href="?deletar=<?php echo $produto['id']; ?>">
+                                <img src="./img/trash.png" class="lixo_icon" alt="">
+                            </a>
                         </td>
                         <td>
                             <a href="editarProduto.php?editar=<?php  echo $produto['id'];?>"><img src="imagens/editar.png" alt="imagem para editar o produto">
