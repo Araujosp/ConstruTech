@@ -1,5 +1,46 @@
+<?php
+
+//password_hash("senha1234", PASSWORD_DEFAULT);
+
+require_once '../init.php';
+
+$usuario = [
+    [
+    'id' => '001',
+    'senha' => '$2y$10$6QENX6wAKhTsH/LsrQMI0uLjRh76nu79U/1RgXdQLVbrKQ9C3Av.a',
+    'email' => 'adm@construtech.com'
+    ]
+];
+
+$erro = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+ 
+    $loginValido = false;
+
+    foreach($usuario as $user){
+            
+        if ($user["email"] === $email && password_verify($senha, $user["senha"])){
+
+            $loginValido = true;
+            $_SESSION["usuario"] = $email;
+            header("Location: ../index.php");
+            exit;
+        }
+    }
+
+    if (!$loginValido) {
+        $erro = "Email ou senha incorretos!";
+    }
+}
+
+?>
+
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,41 +52,55 @@
 <body class="body_login">
     <main class="main_login">
         <img src="../imagens/logo-sem-fundo.png" alt="logo_png" class="logo_login">
+
         <h1 class="titulo_login">Acessar Conta</h1>
-        <form action="" class="form_login">
+        <form method="POST" class="form_login">
+    
             <div class="login_campos">
-                <label for="">E-mail</label>
+                <label>E-mail</label>
                 <div class="campo_input">
-                    <img src="../img/mail1.png" alt="" class="img_form">
-                    <input type="email" placeholder="Email" class="input_login" name="nome">
+                    <img src="../img/mail1.png" class="img_form">
+                    <input type="email" placeholder="Email" class="input_login"
+                    name="email"
+                    required>
                 </div>
             </div>
 
             <div class="login_campos">
                 <div class="senha_font">
-                <label for="">Senha</label>
+                <label>Senha</label>
                 <a href="#" class="forget">Esquece a senha</a>
                 </div>
                 <div class="campo_input">
                     <img src="../img/lock.png" alt="icone_cadeado" class="img_form">
-                    <input type="password" placeholder="••••••••" class="input_login" name="senha">
+                    <input type="password" placeholder="••••••••" class="input_login"
+                    name="senha"
+                    required>
                 </div>
             </div>
+
             <div class="check_forget">
-            <input type="checkbox"><label for="" class="text">Manter-me conectado neste canteiro</label>
+            <input type="checkbox"><label class="text">Manter-me conectado neste canteiro</label>
             </div>
-            <a href="#" class="btn_login">
-                <img src="../img/hard-hat.png" alt="icone_Capacete" class="img_cap">
-                <p>Entrar na Obra</p>
-            </a>
+
+         
+            <button type="submit" class = "btn_login"> <img src="../img/hard-hat.png" alt="icone_Capacete" class="img_cap">Entrar</button>
+  
             <div class="divider">
                 <span class="text_divider">OU</span>
             </div>
+
             <a href="#" class="btn_login btn_solicitacao">
                 <p>Solicitar acesso ao Gestor</p>
             </a>
-            <p class="text">Novo na Empresa ? <a href="#" class="new_login">Cadastre seu Perfil</a></p>
+
+            <p class="text">Novo na Empresa ? <a href="cadastro.php" class="new_login">Cadastre seu Perfil</a></p>
+
         </form>
+
+        <?php if (!empty($erro)): ?>
+        <p style="color:red;"><?php echo $erro; ?></p>
+        <?php endif; ?>
     </main>
 </body>
 </html>

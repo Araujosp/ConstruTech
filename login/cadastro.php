@@ -1,5 +1,5 @@
 <?php
-    include_once "data.php";
+    require_once "init.php";
 ?>
 
 <!doctype html> 
