@@ -1,5 +1,5 @@
 <?php
-    include "data_cad.php";
+    require_once "init.php";
 ?>
 
 <!doctype html>

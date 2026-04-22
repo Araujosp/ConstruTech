@@ -1,6 +1,13 @@
 <?php
 require_once 'init.php';
 
+if(!isset($_SESSION['usuario'])){
+    header("Location: login/login.php");
+    exit;
+}
+
+
+
 if (isset($_GET['deletar'])) {
     $idDeletar = $_GET['deletar'];
     foreach ($_SESSION['produtos'] as $key => $produto) {
