@@ -97,6 +97,6 @@ $produtos_base= [
         'qtd_estoque' =>33,
         'categoria'=> 'ferramentas',
         'fornecedor'=>'Distribuidora ECO',
-        'local'=>'Estoque Principal'
+        'local'=>'Armazém A'
     ]
 ];

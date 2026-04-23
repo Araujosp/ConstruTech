@@ -57,6 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'fornecedor' => $_POST['fornecedor'],
         'local' => $_POST['local']
     ];
+
+
 }
 //print '<pre>';
 //print_r($_SESSION['produtos']);
@@ -86,20 +88,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="main_index">
         <section class="list_estoque">
             <div class="estoque">
-                <div class="filtro">
-                    <img src="" alt="">
+                <div class="filtro" method="GET">
+                    <img src="img/funnel.png" alt="">
                     <p>Filtro:</p>
-                    <select name="" id="" class="filtragem">
+                    <select name="fornecedor" id="" class="filtragem">
                         <option value="">Todas Categorias</option>
-                        <option value="">Bruto</option>
-                        <option value="">Acabamento</option>
-                        <option value="">Ferramenta</option>
-                    </select>
+                        <?php 
+                            foreach($_SESSION['produtos'] as $produto) {
+                                $categorias[] = $produto['categ oria'];
+                            }
+                            $categorias = array_unique($categorias);
+                            $filtro = $_GET['fornecedor'] ?? '';
+
+                            foreach($categorias as $categoria): 
+                        ?>
+                        <option value="" <?php ($categoria === $filtro) ? 'selected' : '' ?>><?php echo "$categoria";?></option>
+                        <?php endforeach; ?>
+                    </select>   
                     <select name="" id="" class="filtragem">
                         <option value="">Todos Locais</option>
-                        <option value="">Estoque Principal</option>
-                        <option value="">Estoque 2</option>
-                        <option value="">Armazém A</option>
+                        <?php 
+                            foreach($_SESSION['produtos'] as $produto) {
+                                $locais[] = $produto['local'];
+                            }
+                            $locais = array_unique($locais);
+
+                            foreach($locais as $local): 
+                        ?>
+                        <option value=""><?php echo "$local";?></option>
+                        <?php endforeach; ?>
                     </select>
                     <select name="" id="" class="filtragem">
                         <option value="">Todos Status</option>
@@ -108,15 +125,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="">Critico</option>
                     </select>
                     <select name="" id="" class="filtragem">
-                        <option value="">Todas Fornecedores</option>
-                        <option value="">Distribuidora ABC</option>
-                        <option value="">Distribuidora ECO</option>
+                        <option value="">Todos os fornecedores</option>
+                        <?php 
+                            foreach($_SESSION['produtos'] as $produto) {
+                                $fornecedores[] = $produto['fornecedor'];
+                            }
+                            $fornecedores = array_unique($fornecedores);
+
+                            foreach($fornecedores as $fornecedor): 
+                        ?>
+                        <option value=""><?php echo "$fornecedor";?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <table>
-                    <tr>
-                        <th colsan="12">Filtro:</th>
-                    </tr>
                     <tr class="linha_destaque">
                         <th>Nome</th>
                         <th>Categoria</th>

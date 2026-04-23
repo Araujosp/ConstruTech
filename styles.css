@@ -278,6 +278,12 @@ main{
     text-align: left;
 }
 
+.filtro {
+    background-color: #ffffff;
+    display: flex;
+    gap: 5px;
+}
+
 .list_estoque {
     display: flex;
     align-items: center;
