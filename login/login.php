@@ -85,17 +85,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
          
             <button type="submit" class = "btn_login"> <img src="../img/hard-hat.png" alt="icone_Capacete" class="img_cap">Entrar</button>
-  
-            <div class="divider">
-                <span class="text_divider">OU</span>
+            
+            <div>
+                <p>Email: <span>adm@construtech.com</span> </p>
+                <p>Senha: <span>adm123</span></p>
             </div>
-
-            <a href="#" class="btn_login btn_solicitacao">
-                <p>Solicitar acesso ao Gestor</p>
-            </a>
-
-            <p class="text">Novo na Empresa ? <a href="cadastro.php" class="new_login">Cadastre seu Perfil</a></p>
-
+        
         </form>
 
         <?php if (!empty($erro)): ?>
