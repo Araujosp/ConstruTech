@@ -87,15 +87,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
     <main class="main_index">
         <section class="list_estoque">
-            <div class="estoque">
-                <div class="filtro" method="GET">
+            <form method="GET" class="estoque">
+                <div class="filtro" >
                     <img src="img/funnel.png" alt="">
                     <p>Filtro:</p>
-                    <select name="fornecedor" id="" class="filtragem">
+                    <select name="" id="" class="filtragem">
                         <option value="">Todas Categorias</option>
                         <?php 
                             foreach($_SESSION['produtos'] as $produto) {
-                                $categorias[] = $produto['categ oria'];
+                                $categorias[] = $produto['categoria'];
                             }
                             $categorias = array_unique($categorias);
                             $filtro = $_GET['fornecedor'] ?? '';
@@ -124,17 +124,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="">Razoavel</option>
                         <option value="">Critico</option>
                     </select>
-                    <select name="" id="" class="filtragem">
+                    <select name="fornecedor" class="filtragem">
                         <option value="">Todos os fornecedores</option>
                         <?php 
                             foreach($_SESSION['produtos'] as $produto) {
                                 $fornecedores[] = $produto['fornecedor'];
                             }
                             $fornecedores = array_unique($fornecedores);
+                            $filtro = $_GET['fornecedor'] ?? '';
 
                             foreach($fornecedores as $fornecedor): 
                         ?>
-                        <option value=""><?php echo "$fornecedor";?></option>
+                        <option value="<?php htmlspecialchars($fornecedor); ?>" <?php ($fornecedor === $filtro) ? 'selected' : '' ?>>
+                            <?php echo "$fornecedor";?><?php htmlspecialchars($fornecedor) ?>
+                        </option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -154,13 +157,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <td></td>
                     </tr> 
                     <?php 
-                    $total_geral = 0;
-                    $total_unidades = 0;
-                    $qtd_produtos = count($_SESSION['produtos']); 
+                        $total_geral = 0;
+                        $total_unidades = 0;
+                        $qtd_produtos = count($_SESSION['produtos']); 
                     ?>
-                    <?php foreach ($_SESSION['produtos'] as $produto) { ?> 
+                    <?php foreach ($_SESSION['produtos'] as $produto) {?> 
+                    <?php if($filtro && $produto['fornecedor'] !== $filtro) continue; ?>
                     <tr>
-                        <td><span class="negrito"><?php echo $produto['nome'] ?></span></td>
+                        <td><span class="negrito">
+                            <?php 
+                                echo $produto['nome'];
+                                htmlspecialchars($produto['fornecedor']);
+                            ?></span></td>
                         <td><?php echo $produto['categoria'] ?></td>
 
                         <td class='crementos' >
@@ -173,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </td>
 
                         <td>R$ <?php echo $produto['preco'] ??'sem preço';?></td>
-                        <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?></td>
+                        <td><?php echo $produto['fornecedor'] ??'Sem fornecedor'; ?><?= htmlspecialchars($produto['fornecedor']) ?></td>
                         <td><?php echo $produto['local'] ?? 'sem local'; ?></td>
 
                         <?php
@@ -216,7 +224,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </td>
                     </tr>
                 </table>
-            </div>
+            </form>
         </section>
     </main>
 </body>
